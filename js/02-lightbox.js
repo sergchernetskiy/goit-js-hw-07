@@ -20,21 +20,8 @@ function createGalleryCardsMarkup(galleryItems) {
     .join("");
 }
 
-// додаємо слухача на контейнер
-galleryContainer.addEventListener("click", onImageClick);
-
-function onImageClick(event) {
-  // забороняємо браузеру переходити по посиланню
-  event.preventDefault();
-
-  // умова кліку - тільки по картинці (все інше ігнор)
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-
-  //підключаємо бібліотеку
-  var lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
-}
+//підключаємо бібліотеку
+var lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
